@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<!--
+
+In this file, comments are used to identify different parts of the code by letter.
+The Sporclone Instructions file will refer to letters when describing the sequence of
+steps necessary to create a working Sporclone game. Complete the project according
+to the order of the NUMBERED instructions, not the order of the letters.
+
+DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
+
+-->
+
+<html>
+<head>
+<!-- a. -->
+
+<title>Sporclone: The Office; Characters Quiz</title>
+
+<!-- b. -->
+
+<link rel="stylesheet" href= "css/main.css" type="text/css">
+
+<!-- You may optionally style the table in your answers section here. -->
+<style>
+table {
+
+}
+
+tr {
+
+}
+
+th {
+
+}
+
+td {
+
+}
+
+table span {
+    /* applies only to span tags within table */
+    border: 1px solid #AAAAAA;
+    display: inline-block;
+    height: 20px;
+    width: 200px;
+}
+</style>
+
+<script>
+/*********** Game configuration ***********/
+
+// c.
+var answers = ["Michael Scott | Steve Carell", "Jim Halpert | John Krasinski", "Pam Halpert | Pam Beesly | Jenna Fischer", "Dwight Shrute | Rainn Wilson","Angela Martin | Angela Shrute | Angela Kinsey", "Andy Bernard | Ed Helms", "Darryl Philbin | Craig Robinson", "Kevin Malone | Brian Baumgartner", "Toby Flenderson | Paul Lieberstein", "Erin Hannon | Ellie Kemper", "Kelly Kapoor | Mindy Kaling", "Ryan Howard | B.J. Novak", "Phyllis Vance | Phyllis Smith", "Holly Flax | Holly Scott | Amy Ryan", "Meredith Palmer | Kate Flannery", "Stanley Hudson | Leslie David Baker", "Oscar Martinez | Oscar Nunez", "Creed Bratton | William Charles Schneider" ];
+
+// d.
+var time_limit = 120; // in seconds
+
+</script>
+
+</head>
+
+
+<!-- e. -->
+<body onload=setup()>
+
+<header>
+    <h1>Sporclone</h1>
+</header>
+
+<div class="frame">
+
+    <section>
+
+        <aside>
+            <h3>More Games</h3>
+            <ul>
+            <!-- f. -->
+            <li><a href="the_office.html">Michael Scott's Personas</a></li>
+            <li><a href="gunsnroses.html">Guns N' Roses Song Quiz</a></li>
+            </ul>
+        </aside>
+
+        <!-- g. -->
+        <img class="icon" src="img/dundermifflin.jpg" alt="Dunder Mifflin Logo">
+
+        <!-- h. -->
+        <h2>Name these Dunder Mifflin Employees</h2>
+
+    </section>
+
+    <section>
+
+        <div class="column">
+            <!-- i. -->
+            <input id="start" type="button" value="PLAY GAME" onclick=start()>
+        </div>
+
+        <div class="column">
+            <!-- j. -->
+            <h3>Enter Character Name:</h3>
+
+            <!-- k.  -->
+            <input id="guess" type="text" onkeyup=check()>
+        </div>
+
+        <div class="column">
+            <h3>Score</h3>
+            <span id="score"></span>
+        </div>
+
+        <div class="column">
+            <h3>Time</h3>
+            <span id="time"></span>
+        </div>
+
+    </section>
+
+    <section>
+
+        <!-- l. -->
+        <table>
+        <tr>
+        <td><img src="img/michael.jpg" alt="Michael Scott"></td>
+        <td><img src="img/jim.jpg" alt="Jim Halpert"></td>
+        <td><img src="img/pam.jpg" alt="Dwight Shrute"></td>
+        </tr>
+        <tr>
+        <td><span id="answer0"></span></td>
+        <td><span id="answer1"></span></td>
+        <td><span id="answer2"></span></td>
+        </tr>
+         <tr>
+        <td><img src="img/dwight.jpg" alt="Dwight Shrute"></td>
+        <td><img src="img/angela.jpg" alt="Angela Martin"></td>
+        <td><img src="img/andy.jpg" alt="Andy Bernard"></td>
+        </tr>
+        <tr>
+        <td><span id="answer3"></span></td>
+        <td><span id="answer4"></span></td>
+        <td><span id="answer5"></span></td>
+        </tr>
+         <tr>
+        <td><img src="img/darryl.jpg" alt="Darryl Philbin"></td>
+        <td><img src="img/kevin.jpg" alt="Kevin Malone"></td>
+        <td><img src="img/toby.jpg" alt="Toby Flenderson"></td>
+        </tr>
+        <tr>
+        <td><span id="answer6"></span></td>
+        <td><span id="answer7"></span></td>
+        <td><span id="answer8"></span></td>
+        </tr>
+         <tr>
+        <td><img src="img/erin.jpg" alt="Erin Hannon"></td>
+        <td><img src="img/kelly.jpg" alt="Kelly Kapoor"></td>
+        <td><img src="img/ryan.jpg" alt="Ryan Howard"></td>
+        </tr>
+        <tr>
+        <td><span id="answer9"></span></td>
+        <td><span id="answer10"></span></td>
+        <td><span id="answer11"></span></td>
+        </tr>
+         <tr>
+        <td><img src="img/phyllis.jpg"alt="Phyllis Vance"></td>
+        <td><img src="img/holly.jpg" alt="Holly Flax"></td>
+        <td><img src="img/meredith.jpg" alt="Meredith Palmer"></td>
+        </tr>
+        <tr>
+        <td><span id="answer12"></span></td>
+        <td><span id="answer13"></span></td>
+        <td><span id="answer14"></span></td>
+        </tr>
+         <tr>
+        <td><img src="img/stanley.jpg" alt="Stanley Hudson"></td>
+        <td><img src="img/oscar.jpg" alt="Oscar Martinez"></td>
+        <td><img src="img/creed.jpg" alt="Creed Bratton"></td>
+        </tr>
+        <tr>
+        <td><span id="answer15"></span></td>
+        <td><span id="answer16"></span></td>
+        <td><span id="answer17"></span></td>
+        </tr>
+        </table>
+
+    </section>
+
+    <footer>
+
+        <!-- m. -->
+        <p>Quiz by Adam Compton</p>
+
+    </footer>
+
+</div>
+
+<!-- n. -->
+<script src="js/sporclone.js"></script>
+
+</body>
+</html>
